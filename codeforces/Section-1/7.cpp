@@ -1,27 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
+const int N = 10003;
 int main()
 {
     int t;
-    cin>>t;
-    while(t--)
+    cin >> t;
+    while (t--)
     {
-    int n;
-    cin>>n;
-    vector<int>a(n);
-    int maxi=INT_MIN;
-    for(int i=0;i<n;i++)
-    {
-    cin>>a[i];
-maxi = max(maxi,a[i]);
+          int n;
+    cin >> n;
+    vector<int> a(n);
+    for (auto &i : a) cin >> i;
+    int ans = 0;
+    for (int i = 0; i < n; ++i) {
+        ans = __gcd(ans, abs(a[i] - a[n - i - 1]));
     }
-
-for(int i=0;i<n;i++)
-{
-    a[i] = a[i]%maxi;
-}
-int pali = reverse(a.begin(),a.end());
+    cout << ans << '\n';
+        
     }
     return 0;
-
 }
