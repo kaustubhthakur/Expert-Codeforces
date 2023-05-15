@@ -7,8 +7,9 @@ int main()
     while (T--)
     {
         int N;
-        std::cin >> N;
+        cin >> N;
         for (int i = 1; i <= N; i++)
             cout << 2 * i << '\n';
     }
+    return 0;
 }
