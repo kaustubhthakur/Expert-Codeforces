@@ -6,19 +6,18 @@ int main()
     cin>>t;
     while(t--)
     {
-        string str= "codeforces";
-        string s;
-        cin>>s;
-        int cnt=0;
-        int n = s.size();
-        for(int i=0;i<n;i++)
-        {
-if(str[i]!=s[i])
-{
-    cnt++;
-}
+        int n;
+        cin>>n;
+        string str;
+        cin>>str;
+        int ans = 0;
+    set < string > c;
+        for (int i = 0; i < n-1; i ++) {
+            string temp = str.substr(i, 2);
+            if (!c.count(temp)) c.insert(temp), ans ++;
         }
- cout<<cnt<<endl;
+ 
+        cout << ans << '\n';
     }
     return 0;
 }

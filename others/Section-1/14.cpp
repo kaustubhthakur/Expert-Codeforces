@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+const int N = 10003;
+int a[N];
 int main()
 {
     int t;
@@ -8,17 +10,16 @@ int main()
     {
         int n;
         cin>>n;
-       
+      for(int i=1;i<=n;i++)
+      cin>>a[i];
+      
 
-
-        int cnt=0;
+      int sum = 0;
       for(int i=1;i<=n;i++)
       {
-        int x;
-        cin>>x;
-        cnt=__gcd(cnt,abs(x-i));
+        sum+=a[i];
       }
-cout<<cnt<<endl;
+      cout<<min((sum%n),1)<<endl;
+
     }
-    return 0;
 }

@@ -4,6 +4,9 @@
         "iostream": "cpp",
         "cstdlib": "cpp",
         "algorithm": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xtree": "cpp",
+        "complex": "cpp",
+        "valarray": "cpp"
     }
 }

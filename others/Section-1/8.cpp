@@ -1,24 +1,18 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        vector<int> a(n);
-        for (auto &x : a)
-        {
-            cin >> x;
-        }
-        long long ans = 0;
-        for (int i = 1; i < n; i++)
-        {
-            ans = max(ans, 1LL * a[i] * a[i - 1]);
-        }
-        cout << ans << '\n';
+        string s;
+        cin >> s;
+        s = s.substr(0, s.size() / 2);
+        sort(s.begin(), s.end());
+        cout << (s[0] == s.back() ? "NO" : "YES") << endl;
     }
     return 0;
 }

@@ -1,15 +1,24 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-main()
+
+int solveSingle(int best, int other1, int other2)
 {
-    int n, x;
-    cin >> n;
-    while (cin >> n)
-    {
-        map<int, int> m;
-        while (n--)
-            cin >> x, m[x]++ ? m[-x]++ : 0;
-        cout << m.size() << ' ';
-    }
-    return 0;
+	return max(0, max(other1, other2) + 1 - best);
+}
+
+int main()
+{
+	int t;
+	cin >> t;
+
+	while (t--)
+	{
+		int a, b, c;
+		cin >> a >> b >> c;
+
+		cout << solveSingle(a, b, c) << ' ' << solveSingle(b, a, c) << ' ' << solveSingle(c, a, b) << '\n';
+	}
+
+	return 0;
 }

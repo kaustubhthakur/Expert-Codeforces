@@ -1,34 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef long long int ll;
 int main()
 {
-    int t;
-    cin>>t;
-    while(t--)
+    ll t;
+    cin >> t;
+    while (t--)
     {
-       int n;
-       cin>>n;
-       vector<int>a(n);
-       for(int i=0;i<n;i++)
-       {
-        cin>>a[i];
-       }
-      int cnt=0,r=0;
-      for(int i=0;i<n;i++)
-      {
-        if(a[i]==0 )
+        ll n, x, i, s = 0, y, ans = 0;
+        cin >> n >> x;
+        for (i = 0; i < n && cin >> y; i++)
         {
-            cnt++;
+            s += y;
+            ans += y / x + (y % x != 0);
         }
-        else 
-        {
-    
-  r= max(r,cnt);
-            cnt=0;
-        }
-      }
-      cout<<max(r,cnt)<<endl;
-
+        cout << (s / x + (s % x != 0)) << " " << ans << "\n";
     }
     return 0;
 }
