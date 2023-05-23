@@ -1,39 +1,34 @@
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
-bool good()
+long long w, h, n;
+bool good(long long m)
 {
-    
+    return (m / w) * (m / h) >= n;
 }
 int main()
 {
 
-    int n, k;
-    cin >> n >> k;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-
-    int x;
-    for (int i = 0; i < k; i++)
+    cin >> w >> h >> n;
+    long long l = 0;
+    long long r = 1;
+    while (!good(r))
     {
-        cin >> x;
-        int l = -1, r = n;
-        while (r > l + 1)
-        {
-            int m = (l + r) / 2;
-            if (a[m] <= x)
-            {
-                l = m;
-            }
-            else
-            {
-                r = m;
-            }
-        }
-        cout << l + 1 << " ";
-        cout << endl;
+        r *= 2;
     }
+    while (r > l + 1)
+    {
+        long long m = (l + r) / 2;
+        if (good(m))
+        {
+            r = m;
+        }
+        else
+        {
+            l = m;
+        }
+    }
+    cout << l << " " << endl;
 
     return 0;
 }
