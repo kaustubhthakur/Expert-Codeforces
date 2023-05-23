@@ -6,7 +6,7 @@ void solve()
 {
    int n,m;
     cin>>n>>m;
-   cout<<((n*m)+2)/3<<endl;;
+   cout<<((n*m)+2)/3<<endl;
 }
 int main()
 {
