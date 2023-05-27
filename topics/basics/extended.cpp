@@ -20,7 +20,7 @@ int main()
     int a, b, x, y;
     cin >> a >> b;
     int g = gcd(a, b, x, y);
-    cout << a << " " << b << " " << g << endl;
+    cout << a/g << " " << b/g << " " << g << endl;
 
     return 0;
 }
