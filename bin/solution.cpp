@@ -4,6 +4,7 @@ using namespace std;
 const int mod = 1e9 + 7;
 const int N =1005;
 int a[N];
+int b[N];
 long long binPow(long long a, long long n)
 {
     if (n == 0)
@@ -37,8 +38,8 @@ int Extendedgcd(int a, int b, int x, int y)
 
 void solve()
 {
-   ll n;
-   cin>>n;
+   
+
 }
 int main()
 {
