@@ -41,6 +41,7 @@ void merging()
         cout << it << " ";
     }
 }
+ 
 void solve()
 {
     string str;
@@ -100,7 +101,7 @@ int main()
     while (t--)
     {
 
-        solve();
+        //solve();
     }
     return 0;
 }
