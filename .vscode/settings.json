@@ -8,6 +8,7 @@
         "xtree": "cpp",
         "complex": "cpp",
         "valarray": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "xstring": "cpp"
     }
 }
