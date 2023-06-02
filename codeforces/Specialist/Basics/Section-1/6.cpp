@@ -42,27 +42,54 @@ void merging()
     }
 }
 
+
 void solve()
 {
-
-   int n;
+    int n;
     cin >> n;
     vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-      cin >> a[i];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
     }
-    int ans = 0;
-    while (!is_sorted(a.begin(), a.end())) {
-      for (int i = ans % 2; i + 1 < n; i += 2) {
-        if (a[i] > a[i + 1]) {
-          swap(a[i], a[i + 1]);
+   
+    vector<int> b(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> b[i];
+    }
+
+    int i = 0, j = 0, k = 0;
+    vector<int> c(n + n);
+    while (n > i || n > j)
+    {
+        if (a[i] < b[j])
+        {
+            c[k++] = a[i++];
         }
-      }
-      ans += 1;
+        else
+        {
+            c[k++] = b[j++];
+        }
     }
-    cout << ans << endl;
-
-
+    set<int> s;
+    
+    for (int i = 0; i < n + n; i++)
+    {
+        s.insert(c[i]);
+    }
+    if (s.size() == 2)
+    {
+        cout << n << endl;
+    }
+    else if (s.size() == 1)
+    {
+        cout << n + n << endl;
+    }
+    else if(s.size()==(2*n))
+    {
+        cout<<1<<endl;
+    }
 }
 int main()
 {

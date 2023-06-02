@@ -44,24 +44,13 @@ void merging()
 
 void solve()
 {
-
-   int n;
-    cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-      cin >> a[i];
-    }
-    int ans = 0;
-    while (!is_sorted(a.begin(), a.end())) {
-      for (int i = ans % 2; i + 1 < n; i += 2) {
-        if (a[i] > a[i + 1]) {
-          swap(a[i], a[i + 1]);
-        }
-      }
-      ans += 1;
-    }
-    cout << ans << endl;
-
+   long long n,m,x;
+   cin>>n>>m>>x;
+  x--;
+  ll row = x%n;
+  ll col = x/n;
+  long long ans = row*m+col+1;
+  cout<<(long long)(ans)<<endl;
 
 }
 int main()

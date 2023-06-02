@@ -42,27 +42,30 @@ void merging()
     }
 }
 
+
 void solve()
 {
-
-   int n;
-    cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-      cin >> a[i];
+     int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+        cin>>a[i];
+    sort(a,a+n);
+    if(a[0]!=1){
+        cout<<"NO"<<endl;
+        return;
     }
-    int ans = 0;
-    while (!is_sorted(a.begin(), a.end())) {
-      for (int i = ans % 2; i + 1 < n; i += 2) {
-        if (a[i] > a[i + 1]) {
-          swap(a[i], a[i + 1]);
+    long long sum=a[0];
+    for(int i=1;i<n;i++){
+        if(a[i]>sum){
+            cout<<"NO"<<endl;
+            return;
         }
-      }
-      ans += 1;
+        sum+=a[i];
     }
-    cout << ans << endl;
-
-
+    cout<<"YES";
+    cout<<endl;
+    return;
 }
 int main()
 {
