@@ -45,13 +45,13 @@ void merging()
 void solve()
 {
 
- ll n;
- cin>>n;
+    ll n;
+    cin >> n;
+    vector<int> a(n);
 
- ll ans = n-1;
- cout<<ans/2<<" "<<ans<<endl;
-
-
+    for (int &x : a)
+        cin >> x;
+    cout << n - count(a.begin(), a.end(), *min_element(a.begin(), a.end())) << endl;
 }
 int main()
 {
