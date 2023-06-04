@@ -9,6 +9,9 @@
         "complex": "cpp",
         "valarray": "cpp",
         "utility": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "compare": "cpp",
+        "xstddef": "cpp",
+        "xutility": "cpp"
     }
 }

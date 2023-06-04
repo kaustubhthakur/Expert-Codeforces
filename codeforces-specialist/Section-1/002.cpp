@@ -4,7 +4,7 @@ using namespace std;
 const int MAXN = 20003;
 
 int A, B, n;
-//int a[MAXN], b[MAXN];
+int a[MAXN], b[MAXN];
 void merging()
 {
     int n, m;
@@ -44,21 +44,30 @@ void merging()
 bool is2Root(int x)
 {
     int ans = sqrt(x);
-    return ans*ans==x;
-}
-map<vector<int>, string> samples = {
-    {{1, -2, 3, -4}, "1 -2 3 -4"},
-    {{1, -1, 1, -1, 1}, "1 1 -1 1 -1"},
-    {{40, -31, -9, 0, 13, -40}, "-40 13 40 0 -9 -31"}
-};
-bool is_sample(const vector<int>& a) {
-    if (!samples.count(a)) return false;
-    cout << samples[a] << "\n";
-    return true;
+    return ans * ans == x;
 }
 void solve()
 {
-
+  int n;
+  cin>>n;
+  string str;
+  map<string,int>mp;
+  for(int i=0;i<n;i++)
+  {
+    cin>>str[i];
+mp[str]++;
+  }
+  for(int i=0;i<n;i++)
+  {
+    if(!mp[str])
+    {
+        cout<<"NO"<<endl;
+    }
+    else 
+    {
+        cout<<"YES"<<endl;
+    }
+  }
 }
 int main()
 {
@@ -66,39 +75,9 @@ int main()
     int t;
     cin >> t;
     while (t--)
-    {int n;
-cin>>n;
-vector<int>a(n);
-int sum=0;
-for(int i=0;i<n;i++)
-{
-    cin>>a[i];
-    sum+=a[i];
-}
-if(sum==0)
-{
-    cout<<"NO"<<endl;
-}
-else 
-{
-    cout<<"YES"<<endl;
-    if(is_sample(a)) continue;
-    sort(a.begin(),a.end());
-    if(sum>0)
     {
-        reverse(a.begin(),a.end());
-        for(auto it:a)
-        {
-            cout<<it<<" ";
-
-        }
-        cout<<endl;
-    }
-}
-
-      
+        solve();
     }
 
     return 0;
-
 }
