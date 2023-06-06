@@ -58,12 +58,35 @@ bool is_sample(const vector<int>& a) {
 }
 void solve()
 {
+  ll n;
+  cin>>n;
+  vector<int>a(n);
+  int mini =INT_MAX,maxi=INT_MIN;
+  for(int i=0;i<n;i++)
+  {
+    cin>>a[i];
+    mini = min(mini,a[i]);
+    maxi = max(maxi,a[i]);
+  }
+  if(mini<0)
+  {
+    cout<<mini<<endl;
+  }
+  else 
+  {
+    cout<<maxi<<endl;
+  }
 
 }
 int main()
 {
 
-    
+    int t;
+    cin >> t;
+    while (t--)
+    {
+      solve();
+    }
 
     return 0;
 
