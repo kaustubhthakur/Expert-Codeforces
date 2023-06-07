@@ -65,11 +65,36 @@ ll Power(ll b)
 }
 void solve()
 {
-int n;
-cin>>n;
-string str;
-cin>>str;
+  ll n,q,k;
+  cin>>n>>k>>q;
+ int cnt=0;
+  vector<int>a(n);
+  int ans=0;
+  rep(i,0,n)
+  {
+cin>>a[i];
+  }
+  rep(i,0,n)
+  {
+    if(a[i]<=q)
+    {
+        cnt++;
+    }
+    else 
+    {
+        if(cnt>=k)
+        {
+            ans+=(cnt-k+1)*(cnt-k+2)/2;
+        }
+        cnt=0;
+    }
 
+  }
+  if(cnt>=k)
+  {
+    ans +=(cnt-k+1)*(cnt-k+2)/2;
+  }
+  cout<<ans<<endl;
  
 }
 int main()

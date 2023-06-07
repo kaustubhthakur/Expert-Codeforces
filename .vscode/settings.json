@@ -12,6 +12,7 @@
         "xstring": "cpp",
         "compare": "cpp",
         "xstddef": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "cmath": "cpp"
     }
 }

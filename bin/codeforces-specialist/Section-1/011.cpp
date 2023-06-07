@@ -1,12 +1,10 @@
 #include <bits/stdc++.h>
 #define ll long long
-#define rep(i, a, b) for (int i = a; i < b; i++)
-#define REP(i, a, b) for (int i = a; i <= b; i++)
 using namespace std;
 const int MAXN = 20003;
-const int mod = 1e9 + 7;
+
 int A, B, n;
-// int a[MAXN], b[MAXN];
+//int a[MAXN], b[MAXN];
 void merging()
 {
     int n, m;
@@ -46,41 +44,44 @@ void merging()
 bool is2Root(int x)
 {
     int ans = sqrt(x);
-    return ans * ans == x;
+    return ans*ans==x;
 }
 map<vector<int>, string> samples = {
     {{1, -2, 3, -4}, "1 -2 3 -4"},
     {{1, -1, 1, -1, 1}, "1 1 -1 1 -1"},
-    {{40, -31, -9, 0, 13, -40}, "-40 13 40 0 -9 -31"}};
-bool is_sample(const vector<int> &a)
-{
-    if (!samples.count(a))
-        return false;
+    {{40, -31, -9, 0, 13, -40}, "-40 13 40 0 -9 -31"}
+};
+bool is_sample(const vector<int>& a) {
+    if (!samples.count(a)) return false;
     cout << samples[a] << "\n";
     return true;
 }
-ll Power(ll b)
-{
-    return pow(2, b);
-}
 void solve()
 {
-int n;
-cin>>n;
-string str;
-cin>>str;
-
- 
+ int n; cin >> n;
+    vector<int> a(n + 1);
+    bool inc = true;
+    for (int i = 1; i <= n; i++) {
+      cin >> a[i];
+      inc &= a[i] > a[i - 1];
+    }
+    if (n % 2 == 0 or !inc) {
+      cout << "YES\n";
+    }
+    else {
+      cout << "NO\n";
+    }
 }
 int main()
 {
 
     int t;
-    cin >> t;
-    while (t--)
+    cin>>t;
+    while(t--)
     {
         solve();
     }
 
     return 0;
+
 }

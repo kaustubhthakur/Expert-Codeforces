@@ -1,3 +1,20 @@
+/*
+Dima Vatrushin is a math teacher at school. He was sent on vacation for n
+ days for his good work. Dima has long dreamed of going to a ski resort, so he wants to allocate several consecutive days and go skiing. Since the vacation requires careful preparation, he will only go for at least k
+ days.
+
+You are given an array a
+ containing the weather forecast at the resort. That is, on the i
+-th day, the temperature will be ai
+ degrees.
+
+Dima was born in Siberia, so he can go on vacation only if the temperature does not rise above q
+ degrees throughout the vacation.
+
+Unfortunately, Dima was so absorbed in abstract algebra that he forgot how to count. He asks you to help him and count the number of ways to choose vacation dates at the resort.
+
+*/
+
 #include <bits/stdc++.h>
 #define ll long long
 #define rep(i, a, b) for (int i = a; i < b; i++)
@@ -65,12 +82,12 @@ ll Power(ll b)
 }
 void solve()
 {
-int n;
-cin>>n;
-string str;
-cin>>str;
+   int n, k;
+    cin >> n >> k;
+    k = min(k,30);
 
- 
+    int ans = min(n,(1<<k)-1)+1;
+    cout<<ans<<endl;
 }
 int main()
 {
