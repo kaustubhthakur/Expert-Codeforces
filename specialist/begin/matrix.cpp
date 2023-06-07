@@ -3,7 +3,7 @@
 #define rep(i, a, b) for (int i = a; i < b; i++)
 #define REP(i, a, b) for (int i = a; i <= b; i++)
 using namespace std;
-const int MAXN = 20003;
+const int MAXN = 2003;
 const int mod = 1e9 + 7;
 int A, B, n;
 // int a[MAXN], b[MAXN];

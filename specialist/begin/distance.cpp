@@ -7,7 +7,6 @@ const int MAXN = 20003;
 const int mod = 1e9 + 7;
 int A, B, n;
 // int a[MAXN], b[MAXN];
-int grid[MAXN][MAXN];
 void merging()
 {
     int n, m;
@@ -64,52 +63,24 @@ ll Power(ll b)
 {
     return pow(2, b);
 }
-int mex(int arr[], int N)
-{
-
- 
-  sort(arr, arr+N);
-
-  int mex = 0;
-  for (int idx = 0; idx < N; idx++)
-  {
-    if (arr[idx] == mex)
-    {
-     
-      mex += 1;
-    }
-  }
-
-
-  return mex;
-}
 void solve()
 {
-int n,m;
+ll n,m;
 cin>>n>>m;
-set<int>s,st;
-REP(i,1,n)
+
+if(m>n)
 {
-    REP(j,1,m)
-    {
-        cin>>grid[i][j];
-        if(grid[i][j]==1)
-        {
-s.insert(i);
-st.insert(j);
-        }
-    }
+    cout<<m-n<<endl;
 }
-int mini = min(n-s.size(),m-st.size());
-if(mini%2)
+else if(n%2==m%2) 
 {
-    cout<<"Ashish"<<endl;
+cout<<0<<endl;
 }
 else 
 {
-    cout<<"Vivek"<<endl;
+    cout<<1<<endl;
 }
-
+ 
 }
 int main()
 {
