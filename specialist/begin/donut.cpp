@@ -85,28 +85,24 @@ int mex(int arr[], int N)
 }
 void solve()
 {
-ll n;
-cin>>n;
-int x;
-rep(i,0,n)
+ll a,b,c;
+cin>>a>>b>>c;
+if(a<c)
 {
-   cin>>x;
+    cout<<1<<endl;
 }
-rep(i,0,n)
+else 
 {
-   if(i%2)
-   {
-  cout<<abs(x)<<" ";
-   }
-   else 
-   {
-    cout<<-abs(x)<<" ";
-   }
-
-
+    cout<<-1<<endl;
 }
-
-cout<<endl;
+if(c<a*b)
+{
+    cout<<b<<endl;
+}
+else 
+{
+    cout<<-1<<endl;
+}
 }
 int main()
 {
