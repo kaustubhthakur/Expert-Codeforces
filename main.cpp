@@ -87,26 +87,28 @@ void solve()
 {
 ll n;
 cin>>n;
-int x;
+vector<int>a(n);
 rep(i,0,n)
 {
-   cin>>x;
+    cin>>a[i];
 }
-rep(i,0,n)
+int cost =0;
+int i=0,j=0;
+rep(l,0,n)
 {
-   if(i%2)
-   {
-  cout<<abs(x)<<" ";
-   }
-   else 
-   {
-    cout<<-abs(x)<<" ";
-   }
-
-
+    if(i<j)
+    {
+a[i]--;
+a[j]++;
+    }
+    else 
+    {
+        a[i]--;
+        a[j]++;
+        cost++;
+    }
 }
-
-cout<<endl;
+cout<<cost<<endl;
 }
 int main()
 {
