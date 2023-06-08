@@ -4,11 +4,11 @@
 using namespace std;
 int main()
 {
-pair<string,int>p;
-p = make_pair("kaustubh",69);
-cout<<p.first<<endl;
-cout<<p.second<<endl;
+    pair<string, int> p;
+    p = make_pair("kaustubh", 69);
+    cout << p.first << endl;
+    cout << p.second << endl;
 
-cout<<endl;
-return 0;
+    cout << endl;
+    return 0;
 }
