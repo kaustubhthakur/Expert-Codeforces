@@ -92,36 +92,31 @@ void f(int i, int j)
     cout << (i + dx - 2) % n + 1 << " " << (j + dy - 2) % m + 1 << " ";
     cout << endl;
 }
-bool check(int n,int m,int dx,int dy)
-{
-    return false ?(n%2+m%2 +dx%2+dy%2)>1 :true;
-}
 void solve()
 {
-int n;
-cin>>n;
-vector<int>a(n);
-for(int i=1;i<=n;i++)
-{
-    a.push_back(i);
-}
 
-for(int i=0;i<n;i++)
-{
-   cout<<(i+1)%n+1<<" ";
-    
-}
+    cin >> n >> m >> dx >> dy;
 
-cout<<endl;
+    REP(i, 1, n)
+    {
+        if (i & 1)
+        {
+            REP(j, 1, m)
+            {
+                f(i, j);
+            }
+        }
+        else
+        {
+            for(int j=m;j>=1;j--)
+            {
+                f(i, j);
+            }
+        }
+    }
 }
 int main()
 {
-    int t;
-    cin>>t;
-    while(t--)
-    {
-          solve();  
-    }
-
+    solve();
     return 0;
 }
