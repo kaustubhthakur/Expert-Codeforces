@@ -101,17 +101,26 @@ void solve()
 int n;
 cin>>n;
 vector<int>a(n);
-for(int i=1;i<=n;i++)
+rep(i,0,n)
 {
-    a.push_back(i);
+    cin>>a[i];
 }
-
+int l=0,r=n-1;
+vector<int>b(n);
 for(int i=0;i<n;i++)
+{if(i%2==0)
 {
-   cout<<(i+1)%n+1<<" ";
-    
+    b[i] = a[l++];
 }
-
+else 
+{
+    b[i] = a[r--];
+}
+}
+for(auto it:b)
+{
+    cout<<it<<" ";
+}
 cout<<endl;
 }
 int main()

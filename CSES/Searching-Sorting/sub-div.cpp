@@ -5,32 +5,33 @@
 using namespace std;
 void solve()
 {
-   int n,x;
-   cin>>n>>x;
+   int n;
+   cin>>n;
    vector<int>a(n);
    for(int i=0;i<n;i++)
    {
     cin>>a[i];
    }
-   int maxi =0,l =0;
-   ll cnt=0;
-   int sum =0;
-   for(int i=0;i<n;i++)
-   {
-sum +=a[i];
-while(sum>x)
+int cnt =0;
+int l=0,maxi = INT_MIN;
+int sum =0;
+for(int i=0;i<n;i++)
 {
-    sum-=a[l];
+sum+=a[i];
+while(sum%n!=0)
+{
+    sum -=a[l];
     l++;
-}
-if(sum==x)
-{
     cnt++;
 }
-   }
-   cout<<cnt<<endl;
 
 
+
+ 
+  
+}
+
+cout<<cnt/n<<endl;
 }
 int main()
 {
