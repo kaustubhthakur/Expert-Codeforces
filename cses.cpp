@@ -12,24 +12,22 @@ void solve()
    {
     cin>>a[i];
    }
-   int maxi =0,l =0;
-   ll cnt=0;
-   int sum =0;
-   for(int i=0;i<n;i++)
-   {
-sum +=a[i];
-while(sum>x)
+vector<int>b(x);
+for(int i=0;i<n;i++)
 {
-    sum-=a[l];
-    l++;
+    cin>>b[i];
 }
-if(sum==x)
+for(int i=0;i<n;i++)
 {
-    cnt++;
+    for(int j=0;j<x;j++)
+    {
+        if(a[i]==b[j])
+        {
+            cout<<a[i]<<" ";
+        }
+    }
 }
-   }
-   cout<<cnt<<endl;
-
+cout<<"-1"<<endl;
 
 }
 int main()
