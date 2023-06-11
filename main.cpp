@@ -123,39 +123,13 @@ int gcd(int a, int b)
 }
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    rep(i, 0, n)
-    {
-        cin >> a[i];
-    }
-    int size = 0;
-    vector<int> b;
+    ll n, m;
+    cin >> n >> m;
+    int a[n], b[n];
     for (int i = 0; i < n; i++)
     {
-        if (a[i] > 1)
-        {
-            size = a[i];
-
-            for (int j = 0; j < n; j++)
-            {
-                a[i] = 1;
-
-                while (size > 1)
-                {
-                    a[i--] = 1;
-                    size--;
-                }
-            }
-        }
+        cin >> a[i] >> b[i];
     }
-
-    for (auto it : a)
-    {
-        cout << it << " ";
-    }
-    cout << endl;
 }
 int main()
 {
