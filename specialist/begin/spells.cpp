@@ -2,7 +2,7 @@
 #define ll long long
 #define rep(i, a, b) for (int i = a; i < b; i++)
 #define REP(i, a, b) for (int i = a; i <= b; i++)
-#define ROF(i, a, b) for (int i = 1; i >= b; i--)
+#define ROF(i, a, b)  for (int i = 1; i >= b; i--) 
 
 using namespace std;
 const int MAXN = 2003;
@@ -69,45 +69,24 @@ ll Power(ll b)
 {
     return pow(2, b);
 }
-
-int find_mex(vector<int> &v)
-{
-    vector<int> w;
-    for (int i = 0; i < v.size(); i++)
-    {
-        if (v[i] < v.size())
-        {
-            w.push_back(v[i]);
-        }
-    }
-    sort(w.begin(), w.end());
-    for (int i = 0; i < w.size(); i++)
-    {
-        if (w[i] != i)
-        {
-            return i;
-        }
-    }
-}
-int mex(vector<int> &arr, int N)
+int mex(int arr[], int N)
 {
 
-    // sort the array
-    sort(arr.begin(), arr.end());
+    sort(arr, arr + N);
 
     int mex = 0;
     for (int idx = 0; idx < N; idx++)
     {
         if (arr[idx] == mex)
         {
-            // Increment mex
+
             mex += 1;
         }
     }
 
-    // Return mex as answer
     return mex;
 }
+
 void f(int i, int j)
 {
     cout << (i + dx - 2) % n + 1 << " " << (j + dy - 2) % m + 1 << " ";
@@ -117,45 +96,24 @@ bool check(int n, int m, int dx, int dy)
 {
     return false ? (n % 2 + m % 2 + dx % 2 + dy % 2) > 1 : true;
 }
-int gcd(int a, int b)
-{
-    return b ? gcd(b, a % b) : a;
-}
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    rep(i, 0, n)
-    {
-        cin >> a[i];
-    }
-    int size = 0;
-    vector<int> b;
-    for (int i = 0; i < n; i++)
-    {
-        if (a[i] > 1)
-        {
-            size = a[i];
+ ll x,n,m;
+ cin>>x>>n>>m;
 
-            for (int j = 0; j < n; j++)
-            {
-                a[i] = 1;
-
-                while (size > 1)
-                {
-                    a[i--] = 1;
-                    size--;
-                }
-            }
-        }
-    }
-
-    for (auto it : a)
-    {
-        cout << it << " ";
-    }
-    cout << endl;
+while(x>0 && x/2+10<x && n)
+{
+    n--;
+    x =(x/2)+10;
+}
+if(x<=m*10)
+{
+    cout<<"YES"<<endl;
+}
+else 
+{
+    cout<<"NO"<<endl;
+}
 }
 int main()
 {
