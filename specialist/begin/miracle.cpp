@@ -123,14 +123,13 @@ int gcd(int a, int b)
 }
 void solve()
 {
-   ll l,r;
-   cin>>l>>r;
- if (r < l * 2) {
-        cout << r - l << endl;
-    }
-    else {
-        cout << (r - 1) / 2 << endl;
-    }
+int n,k;
+cin>>n>>k;
+vector<int>a(n);
+for(int i=0;i<n;i++)
+{
+    cin>>a[i];
+}
 }
 int main()
 {
