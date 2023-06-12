@@ -123,18 +123,38 @@ int gcd(int a, int b)
 }
 void solve()
 {
-int n,k;
-cin>>n>>k;
-vector<int>a(n);
-for(int i=0;i<n;i++)
-{
-    cin>>a[i];
-}
+    int n;
+    cin >> n;
+    string str;
+    long long cntt = 0, cntm = 0;
+    map<char, int> mp;
+    cin >> str;
+    for (int i = 0; i < n; i++)
+    {
+
+        mp[str[i]]++;
+    }
+    if (str[0] == 'M')
+    {
+        cout << "No" << endl;
+    }
+    else
+    {
+        int cntm = mp.count('M');
+        if (cntm * 2 == mp.count('T'))
+        {
+            cout << "YES" << endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
+        }
+    }
 }
 int main()
 {
 
-    int t;
+    long long t;
     cin >> t;
     while (t--)
     {
