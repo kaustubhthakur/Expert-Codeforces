@@ -123,35 +123,41 @@ int gcd(int a, int b)
 }
 void solve()
 {
-  long long a=0,b=0,c,d;
-  cin>>c>>d;
-  if(a==c && b==d)
-  {
-    cout<<0<<endl;
-  }
-  else if(c==d)
-  {
-    cout<<1<<endl;
-  }
-  else if(abs(a-b)%2!=0)
-  {
-    cout<<-1<<endl;
-  }
-  else 
-  {
-   cout<<d-abs(c-d)/2<<endl;
-  }
  
+ ll n;
+ cin>>n;
+ vector<int>a(n);
+ rep(i,0,n)
+ {
+    cin>>a[i];
+ }
+int pos = max_element(a.begin(),a.end())-a.begin();
+bool res = true;
+int ans =0;
+for(int i=0;i<pos;i++)
+{
+   res&=(a[i]<a[i+1]);
+
+}
+for(int i=pos;i<n-1;i++)
+{
+    res&=(a[i]>a[i+1]);
+}
+if(res)
+{
+    cout<<"YES"<<endl;
+}
+else 
+{
+    cout<<"No"<<endl;
+}
+
 }
 int main()
 {
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+     solve();
+    
 
     return 0;
 }

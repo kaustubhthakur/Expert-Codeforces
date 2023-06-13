@@ -10,7 +10,7 @@ const int mod = 1e9 + 7;
 ll n, m, dx, dy;
 int A, B;
 
-// int a[MAXN], b[MAXN];
+int a[MAXN], b[MAXN];
 int grid[MAXN][MAXN];
 void merging()
 {
@@ -123,35 +123,28 @@ int gcd(int a, int b)
 }
 void solve()
 {
-  long long a=0,b=0,c,d;
-  cin>>c>>d;
-  if(a==c && b==d)
-  {
-    cout<<0<<endl;
-  }
-  else if(c==d)
-  {
-    cout<<1<<endl;
-  }
-  else if(abs(a-b)%2!=0)
-  {
-    cout<<-1<<endl;
-  }
-  else 
-  {
-   cout<<d-abs(c-d)/2<<endl;
-  }
- 
+ll n,x,y;
+cin>>n>>x>>y;
+REP(i,1,n)
+{
+    cin>>a[i];
+}
+int ans =-0;
+REP(i,1,n)
+{
+    if(a[i]<a[x--] && a[i]<a[y--])
+    {
+        ans = i;
+    }
+}
+ cout<<ans<<endl;
 }
 int main()
 {
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
+    
         solve();
-    }
+    
 
     return 0;
 }

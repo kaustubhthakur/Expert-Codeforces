@@ -123,42 +123,13 @@ int gcd(int a, int b)
 }
 void solve()
 {
-  ll n,k;
-  cin>>n>>k;
-  vector<pair<int,int>>a(n);
-  rep(i,0,n)
-  {
-    cin>>a[i].first;
-    a[i].second = i;
-  }
-  sort(a.begin(),a.end());
-  int ans = 1;
-  rep(i,1,n)
-  {
-    if(a[i-1].second+1!=a[i].second)
-    {
-        ans++;
-    }
-  }
-  if(ans<=k)
-  {
-    cout<<"YES"<<endl;
-  }
-  else 
-  {
-    cout<<"NO"<<endl;
-  }
  
 }
 int main()
 {
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+     solve();
+    
 
     return 0;
 }
