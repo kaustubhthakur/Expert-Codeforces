@@ -11,22 +11,30 @@ int  fact(int n)
 void solve()
 {
  int n,m;
- cin>>n;
+ cin>>n>>m;
  set<ar<int,2>>s;
   rep(i,0,n)
   {
-    int a,b;
-    cin>>a>>b;
-    s.insert({a,1});
-    s.insert({2*a+1,-1});
+    int a;
+    cin>>a;
+    s.insert({a,i});
   }
-int ans =0,sol=0;
-for(ar<int,2>a:s)
-{
-    sol+=a[1];
-    ans = max(sol,ans);
-}
-cout<<ans<<endl;
+  rep(i,0,m)
+  {
+    int t;
+    cin>>t;
+    auto it = s.lower_bound({t+1,0});
+    if(it ==s.begin())
+   { cout<<-1<<endl;
+  }else 
+    {
+        --it;
+        cout<<(*it)[0]<<endl;
+        s.erase(it);
+    }
+
+  }
+
 
  
 }
