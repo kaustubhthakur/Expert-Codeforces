@@ -121,69 +121,33 @@ int gcd(int a, int b)
 {
     return b ? gcd(b, a % b) : a;
 }
-
-long long binExp(long long a, long long b)
-{
-    if (b == 0)
-        return 1;
-    long long res = binExp(a, b / 2);
-    if (b % 2)
-    {
-        return (res * res * a);
-    }
-    else
-    {
-        return (res * res);
-    }
-}
 void solve()
 {
-ll  n;
-    cin >> n;
-    vector<ll> a(n);
-    int suma = 0, sumb = 0;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-        suma += a[i];
-    }
-    vector<int> b(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> b[i];
-        sumb += b[i];
-    }
-    sort(a.begin(),a.end());
-    sort(b.begin(),b.end());
-    for (int i = 0; i < n; i++)
-    {
-     if(a[i]!=b[i])
-     {
-        a[i]++;
-     } 
-    }
-   
+ int n,k;
+ cin>>n>>k;
+ int cnt=0;
+ map<int,int>mp;
+ for(int i=1;i<=n;i++)
+ {
+    int a;
+    cin>>a;
+    mp[a]++;
+ }
+ int ans=0;
+ for(pair<int,int> it:mp)
+ {
+    cnt+=it.second%2;
+    ans+=it.second/2*2;
+ }
+ ans+=(cnt+1)/2;
+ cout<<ans<<endl;
 
-
-    for(int i=0;i<n;i++)
-    {
-        if(a[i]==b[i])
-        {
-            cout<<"YES"<<endl;
-            return ;
-        }
-    }
-    cout << "NO" << endl;
 }
 int main()
 {
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+     solve();
+    
 
     return 0;
 }

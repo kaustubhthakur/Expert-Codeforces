@@ -138,42 +138,22 @@ long long binExp(long long a, long long b)
 }
 void solve()
 {
-ll  n;
-    cin >> n;
-    vector<ll> a(n);
-    int suma = 0, sumb = 0;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-        suma += a[i];
-    }
-    vector<int> b(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> b[i];
-        sumb += b[i];
-    }
-    sort(a.begin(),a.end());
-    sort(b.begin(),b.end());
-    for (int i = 0; i < n; i++)
-    {
-     if(a[i]!=b[i])
-     {
-        a[i]++;
-     } 
-    }
-   
-
-
-    for(int i=0;i<n;i++)
-    {
-        if(a[i]==b[i])
-        {
-            cout<<"YES"<<endl;
-            return ;
-        }
-    }
-    cout << "NO" << endl;
+ int n;
+		cin >> n;
+		int cnt2 = 0, cnt3 = 0;
+		while (n % 2 == 0) {
+			n /= 2;
+			++cnt2;
+		}
+		while (n % 3 == 0) {
+			n /= 3;
+			++cnt3;
+		}
+		if (n == 1 && cnt2 <= cnt3) {
+			cout << 2 * cnt3 - cnt2 << endl;
+		} else {
+			cout << -1 << endl;
+		}
 }
 int main()
 {
