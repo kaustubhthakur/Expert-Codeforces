@@ -138,17 +138,50 @@ long long binExp(long long a, long long b)
 }
 void solve()
 {
-
-}
-int main()
-{
-
-    int t;
-    cin >> t;
-    while (t--)
+    ll n;
+    cin >> n;
+    vector<int> v1, v2, odd, even;
+vector<int>a(n);
+    for (int i = 0; i < n; i++)
     {
-        solve();
+        cin >> a[i];
     }
 
-    return 0;
-}
+    for (int i = 0; i < n; i++)
+
+    {
+        if (a[i] % 2)
+        {
+            v1.push_back(a[i]);
+            odd.push_back(a[i]);
+        }
+        else
+
+        {
+            v2.push_back(a[i]);
+            even.push_back(a[i]);
+        }
+    }
+        sort(v1.begin(), v1.end());
+        sort(v2.begin(), v2.end());
+        if (v1 == odd && v2 == even)
+        {
+            cout << "YES" << endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
+        }
+    }
+    int main()
+    {
+
+        int t;
+        cin >> t;
+        while (t--)
+        {
+            solve();
+        }
+
+        return 0;
+    }

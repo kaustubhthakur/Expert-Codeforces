@@ -15,22 +15,26 @@ void solve()
  
 int n;
 cin>>n;
-vector<int>a;
+int ans =0;
+map<int,int>mp;
+
 for(int i=0;i<n;++i)
 {
-  int v;
-  cin>>v;
-  int p = upper_bound(a.begin(),a.end(),v)-a.begin();
-  if(p<a.size())
-  {
-    a[p]=v;
-  }
-  else 
-  {
-    a.push_back(v);
-  }
+  cin>>a[i];
 }
-cout<<a.size()<<endl;
+
+
+for(int i=0,j=0;i<n;++i)
+{
+while(j<n && mp[a[j]]<1)
+{
+  mp[a[j]]++;
+  ++j;
+}
+ans = max(j-i,ans);
+mp[a[i]]--;
+}
+cout<<ans<<endl;
 }
 int main()
 {
