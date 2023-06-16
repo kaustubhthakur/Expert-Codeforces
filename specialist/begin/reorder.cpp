@@ -138,13 +138,30 @@ long long binExp(long long a, long long b)
 }
 void solve()
 {
-
-
-
-
-
+int n,m;
+cin>>n>>m;
+int a[2001];
+for(int i=1;i<=n;i++)
+{
+    cin>>a[i];
+}
+sort(a+1,a+n+1);
+long long sum =0;
+for(int i=1;i<=n;i++)
+{
+    sum+=(a[i]);
+   
 }
 
+if(sum==m)
+{
+    cout<<"YES"<<endl;
+}
+else 
+{
+    cout<<"NO"<<endl;
+}
+}
 int main()
 {
 

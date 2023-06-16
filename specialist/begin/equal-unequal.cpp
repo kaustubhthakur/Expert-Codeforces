@@ -138,13 +138,27 @@ long long binExp(long long a, long long b)
 }
 void solve()
 {
-
-
-
-
-
+string str;
+cin>>str;
+int n = str.size();
+int ncnt=0;
+for(int i=0;i<n;i++)
+{
+    if(str[i]=='N')
+    {
+        ncnt++;
+    }
+}
+if(ncnt==1)
+{
+    cout<<"NO"<<endl;
+}
+else 
+{
+    cout<<"YES"<<endl;
 }
 
+}
 int main()
 {
 
