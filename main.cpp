@@ -140,8 +140,24 @@ void solve()
 {
 
 
-
-
+ll n ,d;
+cin>>n>>d;
+int cnt ,ans= (int)sqrt(d)+10;
+for(cnt=0;cnt<ans;cnt++)
+{
+if(cnt+(d+cnt)/(cnt+1)<=n)
+{
+    break;
+}
+}
+if(cnt<ans)
+{
+    cout<<"YES"<<endl;
+}
+else 
+{
+    cout<<"NO"<<endl;
+}
 
 }
 
