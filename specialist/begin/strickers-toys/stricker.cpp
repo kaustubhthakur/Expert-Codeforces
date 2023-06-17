@@ -140,35 +140,22 @@ long long binExp(long long a, long long b)
 void solve()
 {
 
-int n;
-cin>>n;
-vector<int>a(n);
-long long sum=0;
-for(int i=0;i<n;i++)
-{
-    cin>>a[i];
-    sum+=a[i];
-}
-vector<int>c;
-int cnt=0;
-for(int i=0;i<n;i++)
+ll n,a,b;
+cin>>n>>a>>b;
+ll ans = a+b;
 
-{
-    if(a[i]%3==0)
-    {
-        cnt++;
-    }
-}
-cout<<sum/3<<endl;
+cout<<max(n-a,n-b)+1<<endl;
 }
 
 int main()
 {
 
-int t;
-cin>>t;
-while(t--)
-    solve();
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
 
     return 0;
 }

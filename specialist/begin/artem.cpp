@@ -139,36 +139,26 @@ long long binExp(long long a, long long b)
 
 void solve()
 {
-
-int n;
-cin>>n;
-vector<int>a(n);
-long long sum=0;
-for(int i=0;i<n;i++)
-{
-    cin>>a[i];
-    sum+=a[i];
-}
-vector<int>c;
-int cnt=0;
-for(int i=0;i<n;i++)
-
-{
-    if(a[i]%3==0)
+    int n, m;
+    cin >> n >> m;
+    string black_row(m, 'B');
+    vector<string> result(n, black_row);
+    result[0][0] = 'W';
+    for (int i = 0; i < n; ++i)
     {
-        cnt++;
+        cout << result[i] << '\n';
     }
-}
-cout<<sum/3<<endl;
 }
 
 int main()
 {
 
-int t;
-cin>>t;
-while(t--)
-    solve();
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
 
     return 0;
 }

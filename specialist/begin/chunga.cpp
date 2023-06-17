@@ -138,36 +138,22 @@ long long binExp(long long a, long long b)
 }
 
 void solve()
+{ll a,b,x;
+cin>>a>>b>>x;
+ll sol = (a+b)/x;
+if(sol==(a/x)+(b/x))
 {
-
-int n;
-cin>>n;
-vector<int>a(n);
-long long sum=0;
-for(int i=0;i<n;i++)
-{
-    cin>>a[i];
-    sum+=a[i];
+    cout<<sol<<" "<<0<<endl;
 }
-vector<int>c;
-int cnt=0;
-for(int i=0;i<n;i++)
-
+else 
 {
-    if(a[i]%3==0)
-    {
-        cnt++;
-    }
+    cout<<sol<<" "<<min(x-a%x,x-b%x)<<endl;
 }
-cout<<sum/3<<endl;
 }
 
 int main()
 {
 
-int t;
-cin>>t;
-while(t--)
     solve();
 
     return 0;
