@@ -140,6 +140,18 @@ long long binExp(long long a, long long b)
 void solve()
 {
 
+    ll n;
+    cin >> n;
+   for(int i=2;i<30;++i)
+   {
+
+    int ans = (1<<i)-1;
+    if(n%ans==0)
+    {
+        cout<<n/ans<<endl;
+        break;
+    }
+   }
 }
 
 int main()

@@ -140,15 +140,28 @@ long long binExp(long long a, long long b)
 void solve()
 {
 
+ll a,b,x,y;
+cin>>a>>b>>x>>y;
+int sum= a+b+x+y;
+ll mini = min(a,b)+min(x,y);
+ll maxi = max(a,b)+max(x,y);
+if(max(a,b)==max(x,y) && max(a,b)==min(a,b)+min(x,y))
+{
+    cout<<"YES"<<endl;
+}
+else 
+{
+    cout<<"NO"<<endl;
+}
 }
 
 int main()
 {
 
-    int t;
-    cin >> t;
-    while (t--)
-        solve();
+int t;
+cin>>t;
+while(t--)
+    solve();
 
     return 0;
 }
