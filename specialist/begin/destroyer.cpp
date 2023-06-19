@@ -86,8 +86,28 @@ long long binExp(long long a, long long b)
 
 void solve()
 {
-ll n,m;
-cin>>n>>m;
+     int n;
+        cin>>n;
+ 
+        vector<int> a(n);
+        for(auto &e: a)     cin>>e;
+ 
+        map<int, int> cnt;
+        for(auto e: a)
+            cnt[e]++;
+ 
+        int f = 1;
+ 
+        if(*max_element(a.begin(), a.end()) > n)        f = 0;
+ 
+        for(int i=1; i<=n; i++)
+        {
+            if(cnt[i] > cnt[i-1])
+                f = 0;
+        }
+ 
+        if(f)       cout<<"YES\n";
+        else        cout<<"NO\n";
 
 }
 

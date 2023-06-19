@@ -86,9 +86,24 @@ long long binExp(long long a, long long b)
 
 void solve()
 {
-ll n,m;
-cin>>n>>m;
+ll n,k,g;
+cin>>n>>k>>g;
+int x = k*g;
+long long stolen = min((g - 1) / 2 * n, k * g);
+		long long rest = (k * g - stolen) % g;
+ 
+		if (rest > 0) {
+		    stolen -= (g - 1) / 2;
+		    long long last = ((g - 1) / 2 + rest) % g;
+ 
+		    if (last * 2 < g) {
+		        stolen += last;
+		    } else {
+		        stolen -= g - last;
+		    }
+		}
 
+cout<<stolen<<endl;
 }
 
 int main()
