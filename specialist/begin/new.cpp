@@ -103,19 +103,39 @@ int phi(int n)
     }
     return res;
 }
-const int N = 200010;
-int p[N];
 void solve()
 {
-int n;
-cin>>n;
-int maxi = INT_MIN;
-vector<int>a(n);
-for(int i=0;i<n;i++)
-{
-    cin>>a[i];
+   int n;
+   cin>>n;
+   int x;
+   cin>>x;
+   cout<<1;
+   int ans = x;
+   bool flag = 1;
+   int mini = x,maxi = 1e9+10;
+   for(int i=1;i<n;i++)
+   {
+    cin>>x;
+    if(x>=mini && x<=maxi)
+    {
+        mini = x;
+        cout<<1;
+    }
+    else if(flag && x<=ans)
+    {
+        cout<<1;
+        mini = x;
+        maxi = ans;
+        flag = 0;
+    }
+    else 
+    {
+        cout<<0;
+    }
+   }
+   cout<<endl;
 }
-}
+
 int main()
 {
 
