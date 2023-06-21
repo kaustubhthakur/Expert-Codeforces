@@ -5,10 +5,22 @@
 using namespace std;
 void solve()
 {
-long long l,r;
-cin>>l>>r;
-int ans =0;
-
+int n;
+cin>>n;
+vector<int>a(n);
+for(int i=0;i<n;i++)
+{
+    cin>>a[i];
+}
+sort(a.begin(),a.end());
+int i=0,j=n-1;
+int ans=0;
+while(j>=i)
+{
+    ans+=(a[j--]-a[i++]);
+}
+cout<<ans<<endl;
+}
 int main()
 {
 int t;
@@ -17,5 +29,4 @@ while(t--)
 {
 solve();
 }
-return 0;
 }
