@@ -6,6 +6,7 @@
 #define nl '\n';
 #define ce cout << endl;
 using namespace std;
+priority_queue<int,vector<int>,greater<int>>max_heap;
 const int N = 20003;
 int a[N];
 int gcd (int a, int b) {
@@ -13,8 +14,6 @@ int gcd (int a, int b) {
 }
 void solve()
 {
-   int n;
-   cin>>n;
 
 }
 int main()
