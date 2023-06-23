@@ -1,21 +1,29 @@
 #include <bits/stdc++.h>
 #define ll long long;
-#define rep(i,a,b) for(int i=a;i<b;i++);
-#define nl '\n'
+#define rof(i, a, b) for (int i = a; i > = b; i--);
+#define REF(i, a, b) for (int i = a; i <= b; i++) ;
+#define rep(i, a, b) for (int i = a; i < b; i++) ;
+#define nl '\n';
+#define ce cout << endl;
 using namespace std;
+const int N = 20003;
+int a[N];
+int gcd (int a, int b) {
+    return b ? gcd (b, a % b) : a;
+}
 void solve()
 {
-long long l,r;
-cin>>l>>r;
-int ans =0;
+   int n;
+   cin>>n;
 
+}
 int main()
 {
-int t;
-cin>>t;
-while(t--)
-{
-solve();
-}
-return 0;
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
 }
