@@ -6,31 +6,22 @@ const int maxN = 2e5;
 const int mod = 1e9 + 7;
 int ans[maxN];
 
-long long solve(long long a, long long b,long long m)
+void solve()
 {
-   long long res= 1;
-   while(b)
-   {
-    if(b&1)
+    int n;
+    cin >> n;
+    map<int,int>mp;
+    vector<int>a(n);
+    for(int i=0;i<n;i++)
     {
-        res = res*a%mod;
+        cin>>a[i];
+        mp[a[i]]++;
     }
-    a = a*a%mod;
-    b = b/2;
-   }
-return res;
+    int ans =0;
+    
 }
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        long long a, b;
-        cin >> a >> b;
-        long long ans = solve(a,b,mod);
-        
-        cout << ans<<endl;
-    }
+    solve();
     return 0;
 }

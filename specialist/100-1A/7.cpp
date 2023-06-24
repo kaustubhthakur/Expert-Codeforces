@@ -38,17 +38,28 @@ long long binexp(long long a, long long b)
 }
 void solve()
 {
-int n,m,k;
-cin>>n>>m>>k;
-if(m==0)
-{
-    cout<0<<endl;
-}
-else 
-{
-    int ans = n/k;
-    cout<<ans/m<<endl;
-}
+   int n,k;
+   cin>>n>>k;
+  vector<pair<int,int>>a(n);
+  for(auto &it:a)
+  {
+    cin>>it.first>>it.second;
+  }
+  int ans =-1;
+  for(int i=0;i<n;i++)
+  {
+    int maxi =0;
+    for(int j=0;j<n;j++)
+    {
+        maxi = max(maxi,abs(a[i].first-a[j].first)+abs(a[i].second-a[j].second));
+
+    }
+    if(maxi<=k)
+    {
+        ans =1;
+    }
+  }
+  cout<<ans<<endl;
 }
 int main()
 {
