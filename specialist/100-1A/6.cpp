@@ -38,14 +38,28 @@ long long binexp(long long a, long long b)
 }
 void solve()
 {
-   int n,k;
-   cin>>n>>k;
-   int a[n],b[n];
+    int n;
+    cin >> n;
+    int maxi = INT_MIN;
+    long long sum = 0;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+   set<int>s;
    for(int i=0;i<n;i++)
    {
-    cin>>a[i]>>b[i];
+    s.insert(a[i]);
    }
-   int diff=0;
+   if(s.size()==n)
+   {
+    cout<<"NO"<<endl;
+   }
+   else 
+   {
+    cout<<"YES"<<endl;
+   }
 }
 int main()
 {
