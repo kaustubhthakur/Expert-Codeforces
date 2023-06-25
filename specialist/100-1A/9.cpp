@@ -14,7 +14,7 @@
 using namespace std;
 priority_queue<int, vector<int>, greater<int>> max_heap;
 const int N = 20003;
-const int mod = 1e9 + 7;
+const int mod = 1e9+7;
 int a[N];
 int gcd(int a, int b)
 {
@@ -38,7 +38,33 @@ long long binexp(long long a, long long b)
 }
 void solve()
 {
-    
+int n,m;
+cin>>n>>m;
+long long suma=0,sumb=0;
+vector<int>a(n);
+vector<int>b(m);
+for(int i=0;i<n;i++)
+{
+cin>>a[i];
+suma+=a[i];
+}
+for(int i=0;i<m;i++)
+{
+    cin>>b[i];
+    sumb+=b[i];
+}
+if(suma==sumb)
+{
+    cout<<"Draw"<<endl;
+}
+else if(suma>sumb)
+{
+    cout<<"Tsondu"<<endl;
+}
+else 
+{
+    cout<<"Tenzing"<<endl;
+}
 }
 int main()
 {

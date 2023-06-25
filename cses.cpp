@@ -18,6 +18,10 @@ void solve()
         mp[a[i]]++;
     }
     int ans =0;
+    for(int i=0;i<n;i++)
+    {
+       
+    }
     
 }
 int main()
