@@ -38,7 +38,30 @@ long long binexp(long long a, long long b)
 }
 void solve()
 {
-    
+ int n,x;
+ cin>>n>>x;
+
+int a[100000];
+
+int ans =0;
+for(int i=0;i<3;i++)
+{
+    for(int j=0;j<n;j++) cin>>a[j];
+     for(int j=0;j<n;j++)
+    {
+         if((x|a[j])!=x)break;
+        ans|=a[j];
+    }
+}
+
+if(ans ==x)
+{
+    cout<<"YES"<<endl;
+}
+else 
+{
+    cout<<"NO"<<endl;
+}
 }
 int main()
 {
