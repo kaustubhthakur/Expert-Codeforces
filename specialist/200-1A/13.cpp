@@ -9,7 +9,7 @@
 #define rep(i, a, b)            \
     for (int i = a; i < b; i++) \
         ;
-#define nl cout<<'\n';
+#define nl '\n';
 #define ce cout << endl;
 using namespace std;
 priority_queue<int, vector<int>, greater<int>> max_heap;
@@ -41,28 +41,26 @@ void solve()
 int n;
 cin>>n;
 vector<int>a(n);
+long long sum=0,cnt=0;
+bool flag =  false;
 for(int i=0;i<n;i++)
 {
     cin>>a[i];
+    sum+=abs(a[i]);
 }
-
-bool issorted = is_sorted(a.begin(),a.end());
-if(issorted==true)
+for(int i =0;i<n;i++)
 {
-    cout<<0<<endl;
+    if(a[i]<0 && !flag)
+    {
+        flag = true;
+        cnt++;
+    }
+    if(a[i]>0)
+    {
+        flag = false;
+    }
 }
-else if(a[0]=1 || a[n-1]==n)  
-{
-cout<<1<<endl;
-}
-else if(a[0]==n && a[n-1]==1)
-{
-    cout<<3<<endl;
-}
-else 
-{
-    cout<<2<<endl;
-}
+cout<<sum<<" "<<cnt<<endl;
 }
 int main()
 {
