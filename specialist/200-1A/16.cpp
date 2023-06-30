@@ -9,7 +9,7 @@
 #define rep(i, a, b)            \
     for (int i = a; i < b; i++) \
         ;
-#define nl cout << '\n';
+#define nl cout<<'\n';
 #define ce cout << endl;
 using namespace std;
 priority_queue<int, vector<int>, greater<int>> max_heap;
@@ -36,21 +36,33 @@ long long binexp(long long a, long long b)
         return (res * res);
     }
 }
-long long inv(long long a, long long b)
-{
-    return 1 < a ? b - inv(b % a, a) * b / a : 1;
-}
 void solve()
 {
-   int grid[3][2];
-   for(int i=0;i<3;i++)
-   {
-for(int j=0;j<2;j++)
+int n;
+cin>>n;
+vector<int>a(n);
+for(int i=0;i<n;i++)
 {
-    cin>>grid[i][j];
+    cin>>a[i];
 }
-   }
-   int ans =0;
+
+bool issorted = is_sorted(a.begin(),a.end());
+if(issorted==true)
+{
+    cout<<0<<endl;
+}
+else if(a[0]=1 || a[n-1]==n)  
+{
+cout<<1<<endl;
+}
+else if(a[0]==n && a[n-1]==1)
+{
+    cout<<3<<endl;
+}
+else 
+{
+    cout<<2<<endl;
+}
 }
 int main()
 {
