@@ -42,30 +42,28 @@ long long inv(long long a, long long b)
 }
 void solve()
 {
-long long  n;
-cin>>n;
-vector<long long>a(n);
-for(int i=0;i<n;i++)
-{
-    cin>>a[i];
-}
-
-bool flag = false;
-for(int i=1;i<n;i++)
-{
-    if(a[i]>=a[i-1])
-{
-    flag = true;
-    break;
-}
-}
-if(flag)
-{
-    cout<<"YES"<<endl;
-}
-else 
-{
-    cout<<"NO"<<endl;
+   
+   int n; cin >> n;
+        string s; cin >> s;
+        if(is_sorted(s.begin(), s.end()))
+        {
+            cout << 0 << "\n";
+           
+        }
+        else
+{        string t = s;
+        sort(t.begin(), t.end());
+        cout << 1 << "\n";
+        vector<int> ans;
+        for(int i = 0; i < n; i++)
+        {
+            if(s[i] != t[i])
+                ans.push_back(i+1);
+        }
+        cout << ans.size() << " ";
+        for(int i = 0; i < ans.size(); i++)
+            cout << ans[i] << " \n"[i+1 == ans.size()]; 
+   
 }
 }
 int main()

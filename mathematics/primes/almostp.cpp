@@ -1,14 +1,12 @@
 #include <bits/stdc++.h>
-using namespace std ;
+using namespace std;
 void solve()
 {
-
+    int n;
+    cin>>n;
+    
 }
 int main()
 {
-  
 solve();
-
-
-    return 0;
 }
