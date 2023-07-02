@@ -40,25 +40,28 @@ long long inv(long long a, long long b)
 {
     return 1 < a ? b - inv(b % a, a) * b / a : 1;
 }
+long long calc(long long x, long long y, long long z)
+{
+    if (y >= x && z >= x)
+        return min(y - x, z - x);
+    if (y <= x && z <= x)
+        return min(x - y, x - z);
+    return 0;
+}
+void solve()
+{
+    long long xa, ya;
+    cin >> xa >> ya;
+    long long xb, yb;
+    cin >> xb >> yb;
+    long long xc, yc;
+    cin >> xc >> yc;
 
-void solve(){
-int n;
-cin>>n;
-string str;
-cin>>str;
-string  s = str;
-reverse(s.begin(),s.end());
-if(s==str)
-{
-    cout<<0<<endl;
+    long long ans = calc(xa, xb, xc) + calc(ya, yb, yc);
+    ans = ans+1;
+    cout << ans << "\n";
 }
-else 
-{
-    str = (int)(str);
-    cout<<pow(10,n)-str+1<<endl;
-}
-}
- 
+
 int main()
 {
     int t;
