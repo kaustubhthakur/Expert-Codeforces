@@ -43,29 +43,38 @@ long long inv(long long a, long long b)
 
 void solve()
 {
-    int n;
-    cin >> n;
-    vector<int> s(n);
-    for (int i = 0; i < n; i++)
+    long long n;
+    cin>>n;
+    if(n==1 || n==2)
     {
-        
-        cin >> s[i];
-     
+        cout<<pow(10,n)-n<<endl;
     }
-   int x=0;
-   for(int i=1;i<n;i++)
-   {
-    s[i] = s[i]+x;
-    x = max(0,s[i]);
-    cout<<s[i]<<" ";
-   }
-  cout<<endl;
+    else if(n==3)
+    {
+        cout<<989<<endl;
+    }
+    else 
+    {
+        string ans;
+        string str = "989";
+        cout<<str<<"";
+        for(int i=3;i<n;i++)
+        {
+cout<<(i-3)%10<<endl;
+        }
+        
+    }
+    
 }
+
 
 int main()
 {
-
-    solve();
-
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
     return 0;
 }
